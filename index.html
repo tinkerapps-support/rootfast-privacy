@@ -35,7 +35,7 @@
 <body>
 
   <h1>Privacy Policy</h1>
-  <p class="subtitle">Rootfast — Grove Defense &nbsp;·&nbsp; Last updated: July 19, 2026</p>
+  <p class="subtitle">Rootfast — Grove Defense &nbsp;·&nbsp; Last updated: July 28, 2026</p>
 
   <h2>Overview</h2>
   <p>
@@ -78,12 +78,14 @@
       <tr>
         <td>Firebase Analytics</td>
         <td>Usage analytics</td>
-        <td>App events, device information, app-instance ID</td>
+        <td>App events, device information, app-instance ID, and — for signed-in players who
+        consent — your Play Games Player ID</td>
       </tr>
       <tr>
         <td>Firebase Crashlytics</td>
         <td>Crash reporting</td>
-        <td>Crash logs, device diagnostics, installation identifiers</td>
+        <td>Crash logs, device diagnostics, installation identifiers, and — for signed-in
+        players who consent — your Play Games Player ID</td>
       </tr>
       <tr>
         <td>Google Play Games Services</td>
@@ -214,14 +216,19 @@
     functionality purposes:
   </p>
   <ul>
-    <li><strong>User ID (Player ID)</strong> — a unique identifier linking your Google account to your in-game profile.</li>
+    <li><strong>User ID (Player ID)</strong> — a unique identifier linking your Google account to your in-game profile. If you have also consented to analytics, this identifier is additionally used as the user identifier in Firebase Analytics and Firebase Crashlytics (see those sections for the conditions and how to withdraw).</li>
     <li><strong>Saved game data (app activity)</strong> — your stored game progress, synced through Google Play Saved Games so it can be restored on reinstall or a new device.</li>
     <li><strong>Achievements and leaderboard scores</strong> — achievements you unlock and scores you submit are associated with your Play Games profile; leaderboard scores may be visible to other players depending on your Google Play Games privacy settings.</li>
   </ul>
   <p>
-    Rootfast uses Google Play Games Services solely to provide sign-in, achievements,
-    leaderboards, and cloud saves. Tinker Apps does not store this information on its own
-    servers or use it for any other purpose. Google Play Games Services is operated by
+    Rootfast uses Google Play Games Services to provide sign-in, achievements, leaderboards,
+    and cloud saves. The one further use is the Player ID described above: for signed-in
+    players who have consented, it also identifies your activity within Firebase Analytics
+    and Firebase Crashlytics, so that gameplay and crash data can be grouped per player
+    rather than per install. Saved game data, achievements, and leaderboard scores are
+    <strong>not</strong> shared with those services. Tinker Apps does not store any of this
+    information on its own servers or use it for any other purpose.
+    Google Play Games Services is operated by
     Google under
     <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>,
     with additional information at
@@ -234,10 +241,38 @@
     with the game. Firebase Analytics may collect:
   </p>
   <ul>
-    <li>App events (e.g. run start and end, waves cleared, campaign level results, upgrade and faction unlocks, rewarded-ad placements shown, and Remove Ads ownership)</li>
+    <li>App events — for example: starting and ending a run, waves cleared and where a run
+    was lost, campaign level results and stars, tutorial progress, cards chosen or skipped
+    during a draft, Grove upgrade and faction unlocks, ad placements offered and whether
+    an ad was watched, in-app setting changes, Remove Ads ownership, and errors saving
+    your game to the device</li>
     <li>Device information (model, OS version, language)</li>
     <li>A randomly-generated app instance ID</li>
     <li>Approximate location derived from IP address</li>
+    <li>Your <strong>Play Games Player ID</strong>, but only if you are signed in to Google
+    Play Games <em>and</em> have consented — see below</li>
+  </ul>
+  <p>
+    <strong>Play Games Player ID in analytics and crash reports.</strong> If you are signed
+    in to Google Play Games, Rootfast may pass your Play Games Player ID to Firebase
+    Analytics and Firebase Crashlytics as a user identifier. This lets us tell that events
+    or a crash report came from the same player across sessions and devices, so we can
+    diagnose a problem you report to us and understand how progression works over time
+    rather than only per install. Specifically:
+  </p>
+  <ul>
+    <li>The Player ID is a <strong>pseudonymous identifier issued by Google</strong> and
+    scoped to this game. It is not your name, email address, Google account address, or
+    Play Games display name, and none of those are ever sent to Firebase.</li>
+    <li>It is only used <strong>after you consent</strong> through Google's consent message.
+    Until then — and if you decline — no Player ID is attached to analytics events or crash
+    reports.</li>
+    <li>If you <strong>withdraw consent</strong> (<em>Settings &gt; Manage ad privacy</em>),
+    the identifier is cleared from both services and stops being attached.</li>
+    <li>Where Google Play indicates that a user is a <strong>minor</strong> (see
+    <em>Age Signals</em> below), no Player ID is attached, regardless of consent.</li>
+    <li>If you never sign in to Google Play Games, there is no Player ID and nothing is
+    attached.</li>
   </ul>
   <p>
     This data is processed by Google under
@@ -245,7 +280,11 @@
     Tinker Apps uses analytics reports and aggregated insights generated from this
     data to understand gameplay trends, improve the app, and evaluate features, and does not
     use Firebase Analytics to directly identify individual users by name, email, or similar
-    directly identifying information. In the EEA, UK, and Switzerland, Firebase Analytics does
+    directly identifying information. Where a Play Games Player ID is attached as described
+    above, activity can be linked to that pseudonymous identifier — and so, by Google, to the
+    Google account behind it — but Tinker Apps sees only the identifier itself, and uses it
+    to group a player's own activity together, not to build advertising profiles. In the EEA,
+    UK, and Switzerland, Firebase Analytics does
     not store or use device identifiers until you consent through Google's consent message; if
     consent is not given, analytics identifiers remain disabled (Analytics may still record
     limited, non-identifying information needed for basic operation). You may also be able
@@ -262,10 +301,14 @@
     <li>Stack traces and crash or error logs</li>
     <li>Device state at the time of the crash (device model, OS version, available memory)</li>
     <li>Installation and diagnostic identifiers used by Firebase Crashlytics to associate crash reports with a particular app installation</li>
+    <li>Context about where in the game the problem happened — the screen you were on, and the mode, level, and wave of any run in progress</li>
+    <li>Your <strong>Play Games Player ID</strong>, on the same consent-gated basis described under <em>Firebase Analytics</em> above (signed in and consented only; never for minors; cleared if you withdraw consent). Crash reports are still collected without it.</li>
   </ul>
   <p>
-    This data is used solely to diagnose and fix bugs and is not used to identify
-    individual users. Crashlytics is operated by
+    This data is used solely to diagnose and fix bugs and crashes. It is not used for
+    advertising or profiling, and Tinker Apps does not receive your name, email address, or
+    Play Games display name — where a Player ID is attached, it lets us match a crash to a
+    problem you report to us directly. Crashlytics is operated by
     Google under
     <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.
   </p>
@@ -293,7 +336,8 @@
   <p>
     Rootfast uses this information only to provide an age-appropriate experience —
     specifically, to apply more restrictive, non-personalised advertising settings for users
-    who are minors, and to offer minors a Settings option that replaces interstitial ads
+    who are minors, to withhold the Play Games Player ID from analytics and crash reports for
+    minors, and to offer minors a Settings option that replaces interstitial ads
     with a short ad-free break — and for legal compliance and safety, as permitted by these
     laws. In-app purchases are not restricted by the app based on this signal; purchases by
     minors are gated by Google Play's own parental-approval controls (such as Family
@@ -341,7 +385,7 @@
     <li><strong>Local game data</strong> — uninstall the app or clear app data in your device settings (you can also use the in-game <em>Settings &gt; Reset progress</em> option).</li>
     <li><strong>Cloud saved games, achievements &amp; leaderboard data</strong> — delete via your Google Play Games profile or Google Account settings under <em>Settings &gt; Delete Play Games account and data</em>.</li>
     <li><strong>AdMob data</strong> — managed by Google; visit <a href="https://myaccount.google.com" target="_blank" rel="noopener">myaccount.google.com</a>.</li>
-    <li><strong>Firebase Analytics &amp; Crashlytics data</strong> — processed by Google. Some data may be associated with device- or app-level identifiers rather than your Google Account and may not be individually accessible or deletable by Tinker Apps. For information about Google's privacy controls, see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</li>
+    <li><strong>Firebase Analytics &amp; Crashlytics data</strong> — processed by Google. Some data may be associated with device- or app-level identifiers rather than your Google Account and may not be individually accessible or deletable by Tinker Apps. Where your Play Games Player ID has been attached (signed in and consented), analytics data associated with that identifier <em>can</em> be located — contact us with your Player ID and we will request its deletion from Firebase Analytics. For information about Google's privacy controls, see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</li>
   </ul>
   <p>
     Some data collected by third-party services (such as Firebase Analytics and
@@ -361,7 +405,8 @@
     You have several controls over the data processed through the app:
   </p>
   <ul>
-    <li><strong>Withdraw or change ad/analytics consent</strong> (EEA, UK &amp; Switzerland) — open <em>Settings &gt; Manage ad privacy</em> in the app to re-present the Google consent message.</li>
+    <li><strong>Withdraw or change ad/analytics consent</strong> (EEA, UK &amp; Switzerland) — open <em>Settings &gt; Manage ad privacy</em> in the app to re-present the Google consent message. Withdrawing also clears your Play Games Player ID from Firebase Analytics and Crashlytics, so it stops being attached to new events and crash reports.</li>
+    <li><strong>Avoid the Player ID entirely</strong> — do not sign in to Google Play Games. The game is fully playable signed out; you lose cloud saves, achievements, and leaderboards, and no Player ID exists to attach.</li>
     <li><strong>Opt out of personalised ads / reset your advertising ID</strong> — in your device settings under <em>Settings &gt; Google &gt; Ads</em>.</li>
     <li><strong>Delete cloud saved games</strong> — via your Google Play Games profile or Google Account settings under <em>Settings &gt; Delete Play Games account and data</em>.</li>
     <li><strong>Manage data held by Google</strong> — at <a href="https://myaccount.google.com" target="_blank" rel="noopener">myaccount.google.com</a>.</li>
@@ -416,7 +461,7 @@
     that may be collected through the app by the third-party services described above include:
   </p>
   <ul>
-    <li><strong>Identifiers</strong> — e.g. the Android Advertising ID, a randomly-generated app-instance ID, and, if you sign in to Google Play Games, your Play Games Player ID.</li>
+    <li><strong>Identifiers</strong> — e.g. the Android Advertising ID, a randomly-generated app-instance ID, and, if you sign in to Google Play Games, your Play Games Player ID (which, with your consent, also identifies your activity in Firebase Analytics and Crashlytics).</li>
     <li><strong>Internet or other electronic network activity</strong> — e.g. in-app events and ad interactions.</li>
     <li><strong>Device information</strong> — e.g. device model, operating system version, and language.</li>
     <li><strong>Approximate geolocation</strong> — derived from IP address.</li>
@@ -444,7 +489,8 @@
     jurisdiction — age 13 in the United States, or up to age 16 in certain EEA
     member states. Where Google Play provides an age signal indicating that a user is a minor
     (see <em>Age Signals</em> above), the app applies more restrictive, non-personalised
-    advertising settings. If you believe a child below the applicable age has used the app
+    advertising settings, and no Play Games Player ID is attached to analytics events or crash
+    reports. If you believe a child below the applicable age has used the app
     in a way that has transmitted personal data, please contact us at
     <a href="mailto:tinkerapps.support@gmail.com">tinkerapps.support@gmail.com</a>
     so we can take appropriate action.
@@ -478,6 +524,12 @@
     until you consent, and if you decline, analytics storage stays disabled. Outside those
     regions, Firebase Analytics is used under our legitimate interests to understand aggregate
     gameplay trends.</li>
+    <li><strong>Consent — Play Games Player ID as a user identifier</strong> — attaching your
+    Player ID to Firebase Analytics and Crashlytics relies on your consent, gathered through
+    the same Google consent message. It is never attached before consent is given, is cleared
+    if you withdraw it under <em>Settings &gt; Manage ad privacy</em>, and is never attached
+    where Google Play indicates the user is a minor. Analytics and crash reporting continue to
+    function without it.</li>
     <li><strong>Performance of a contract</strong> — Google Play Games Services is used to
     provide sign-in, achievements, leaderboards, and cloud saves when you choose to sign in,
     and Google Play Billing is used to process and restore the Remove Ads purchase.</li>
