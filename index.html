@@ -35,7 +35,7 @@
 <body>
 
   <h1>Privacy Policy</h1>
-  <p class="subtitle">Rootfast — Grove Defense &nbsp;·&nbsp; Last updated: July 28, 2026</p>
+  <p class="subtitle">Rootfast — Grove Defense &nbsp;·&nbsp; Last updated: August 16, 2026</p>
 
   <h2>Overview</h2>
   <p>
@@ -78,8 +78,8 @@
       <tr>
         <td>Firebase Analytics</td>
         <td>Usage analytics</td>
-        <td>App events, device information, app-instance ID, and — for signed-in players who
-        consent — your Play Games Player ID</td>
+        <td>App events, purchase amount and currency, player segments, device information,
+        app-instance ID, and — for signed-in players who consent — your Play Games Player ID</td>
       </tr>
       <tr>
         <td>Firebase Crashlytics</td>
@@ -246,12 +246,27 @@
     during a draft, Grove upgrade and faction unlocks, ad placements offered and whether
     an ad was watched, in-app setting changes, Remove Ads ownership, and errors saving
     your game to the device</li>
+    <li><strong>Purchase events, including the amount and currency</strong> of an in-app
+    purchase you complete, so that revenue can be reported alongside gameplay. Tinker Apps
+    never receives, sees, or stores your payment details — see <em>Google Play Billing</em>
+    below.</li>
     <li>Device information (model, OS version, language)</li>
     <li>A randomly-generated app instance ID</li>
     <li>Approximate location derived from IP address</li>
     <li>Your <strong>Play Games Player ID</strong>, but only if you are signed in to Google
     Play Games <em>and</em> have consented — see below</li>
   </ul>
+  <p>
+    <strong>Player segments.</strong> Alongside individual events, Rootfast records a small
+    set of coarse labels describing what kind of player you are, so that the reports above
+    can be broken down by group rather than read as one undifferentiated total. For Rootfast
+    these are: how many runs you have played, your total stars, how many Grove upgrades and
+    card combinations you have unlocked, how far through the campaign you have reached,
+    which factions you own, whether you have bought Remove Ads, and whether the developer
+    cheat menu has been used. These labels are deliberately coarse ranges rather than exact
+    values (for example "5–19 runs", not "eleven runs"), they describe your activity in this
+    game only, and they are not used to target advertising.
+  </p>
   <p>
     <strong>Play Games Player ID in analytics and crash reports.</strong> If you are signed
     in to Google Play Games, Rootfast may pass your Play Games Player ID to Firebase
