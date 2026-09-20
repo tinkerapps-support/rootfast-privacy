@@ -151,17 +151,34 @@
   <h2>Your Analytics &amp; Diagnostics Choice</h2>
   <p>
     Because the app carries no advertising, there is exactly one privacy choice to make, and
-    the app asks you directly rather than through an advertising consent form. Shortly after
-    your first launch you are asked whether to
-    <strong>share anonymous gameplay statistics</strong>. Your answer controls the
+    the app asks you directly rather than through an advertising consent form. Every player
+    is shown a card about it on one of their first launches, telling them what is collected
+    and how to stop it. Your answer controls the
     <em>Firebase Analytics</em> section below in full. It controls one part of the
     <em>Firebase Crashlytics</em> section — whether your Play Games Player ID is attached to
     crash reports — but it does not switch crash reporting itself on or off.
   </p>
+  <p>
+    <strong>What that card does depends on where you are</strong>, because the law does:
+  </p>
   <ul>
-    <li><strong>Until you answer, and if you decline</strong>, analytics storage stays
+    <li><strong>In the European Economic Area, the United Kingdom and Switzerland</strong>,
+    it is a request, and nothing is collected until you agree. Analytics storage stays
+    switched off from the moment the app starts — before the card appears, while it is on
+    screen, and permanently if you decline.</li>
+    <li><strong>Everywhere else</strong>, anonymous gameplay statistics are collected from
+    first launch, and the card tells you so and offers a single tap to stop it. You are
+    never opted in silently: the card appears whether or not you go looking for it, and the
+    Settings switch below turns it off at any time, in any country.</li>
+  </ul>
+  <p>
+    In both cases the same rules apply once you have answered:
+  </p>
+  <ul>
+    <li><strong>If you decline</strong>, analytics storage is
     switched off: Firebase Analytics does not read or store analytics identifiers on your
-    device, and no Play Games Player ID is attached to analytics or crash reports.</li>
+    device, and no Play Games Player ID is attached to analytics or crash reports. A refusal
+    is remembered and you are not asked again.</li>
     <li><strong>If you agree</strong>, gameplay events are collected as described below,
     and — if you are signed in to Google Play Games — your Player ID is attached to them and
     to crash reports.</li>
@@ -175,7 +192,7 @@
     app does no advertising.</li>
   </ul>
   <p>
-    You can change your answer at any time in the app under
+    <strong>You can change your answer at any time</strong>, in any country, under
     <em>Settings &gt; Share anonymous diagnostics</em>. Turning it off takes effect
     immediately and clears your Play Games Player ID from both Firebase Analytics and
     Firebase Crashlytics; see <em>Data Deletion</em> for what that does and does not remove.
