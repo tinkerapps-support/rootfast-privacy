@@ -35,7 +35,7 @@
 <body>
 
   <h1>Privacy Policy</h1>
-  <p class="subtitle">Rootfast — Grove Defense &nbsp;·&nbsp; Last updated: September 23, 2026</p>
+  <p class="subtitle">Rootfast — Grove Defense &nbsp;·&nbsp; Last updated: September 29, 2026</p>
 
   <h2>Overview</h2>
   <p>
@@ -75,7 +75,9 @@
         <td>Usage analytics</td>
         <td>App events, purchase amount and currency, player segments, device information,
         app-instance ID, and — for signed-in players who consent — your Play Games Player ID.
-        Only collected if you turn on <em>Share anonymous diagnostics</em></td>
+        Governed by <em>Share anonymous diagnostics</em>: off until you agree in the EEA, UK
+        and Switzerland; on from first launch elsewhere, with an on-screen notice and a
+        one-tap off switch</td>
       </tr>
       <tr>
         <td>Firebase Crashlytics</td>
@@ -167,7 +169,8 @@
     switched off from the moment the app starts — before the card appears, while it is on
     screen, and permanently if you decline.</li>
     <li><strong>Everywhere else</strong>, anonymous gameplay statistics are collected from
-    first launch, and the card tells you so and offers a single tap to stop it. You are
+    first launch, and the card tells you so and offers a single tap to stop it. Your Play
+    Games Player ID is not attached to anything until you have answered that card. You are
     never opted in silently: the card appears whether or not you go looking for it, and the
     Settings switch below turns it off at any time, in any country.</li>
   </ul>
@@ -197,7 +200,8 @@
     immediately and clears your Play Games Player ID from both Firebase Analytics and
     Firebase Crashlytics; see <em>Data Deletion</em> for what that does and does not remove.
     Where Google Play indicates that a player is a minor, the app does not ask this question
-    and does not enable analytics identification at all (see <em>Age Signals</em> below).
+    and does not enable analytics identification at all; the Settings switch is not shown to
+    them either (see <em>Age Signals</em> below).
   </p>
 
   <h2>Google Play Billing &amp; In-App Purchases</h2>
@@ -317,8 +321,9 @@
     <strong>exact counts</strong> — your total stars and the number of Grove upgrades you
     own — because the ranges were too wide to be useful for balancing the game's difficulty.
     All of them describe your activity in this game only, none of them is used to target
-    advertising, and they are only recorded at all if you have turned on
-    <em>Share anonymous diagnostics</em>.
+    advertising, and they are recorded only while <em>Share anonymous diagnostics</em> is
+    on — which, as described above, is from first launch outside the EEA, the UK and
+    Switzerland, and only after you agree inside them.
   </p>
   <p>
     <strong>Play Games Player ID in analytics and crash reports.</strong> If you are signed
@@ -354,7 +359,8 @@
     Google account behind it — but Tinker Apps sees only the identifier itself, and uses it
     to group a player's own activity together, not to build advertising profiles. In the EEA,
     UK, and Switzerland, Firebase Analytics does
-    not store or use device identifiers until you consent through Google's consent message; if
+    not store or use device identifiers until you agree on the app's own diagnostics card
+    (described above) or turn on <em>Share anonymous diagnostics</em> in Settings; if
     consent is not given, analytics identifiers remain disabled (Analytics may still record
     limited, non-identifying information needed for basic operation). You may also be able
     to limit certain data collection through your device or Google privacy settings.
@@ -370,7 +376,7 @@
     <li>Stack traces and crash or error logs</li>
     <li>Device state at the time of the crash (device model, OS version, available memory)</li>
     <li>Installation and diagnostic identifiers used by Firebase Crashlytics to associate crash reports with a particular app installation</li>
-    <li>Context about where in the game the problem happened — the screen you were on, and the mode, level, and wave of any run in progress</li>
+    <li>Context about where in the game the problem happened — the screen you were on, and the mode, level, wave, faction and random seed of any run in progress (the seed is a game-generated number that lets a run be replayed; it identifies the run, not you)</li>
     <li>Your <strong>Play Games Player ID</strong>, on the same consent-gated basis described under <em>Firebase Analytics</em> above (signed in and consented only; never for minors; cleared if you withdraw consent). Crash reports are still collected without it.</li>
   </ul>
   <p>
