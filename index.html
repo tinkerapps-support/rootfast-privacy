@@ -35,7 +35,7 @@
 <body>
 
   <h1>Privacy Policy</h1>
-  <p class="subtitle">Rootfast — Grove Defense &nbsp;·&nbsp; Last updated: September 29, 2026</p>
+  <p class="subtitle">Rootfast — Grove Defense &nbsp;·&nbsp; Last updated: October 13, 2026</p>
 
   <h2>Overview</h2>
   <p>
@@ -75,7 +75,7 @@
         <td>Usage analytics</td>
         <td>App events, purchase amount and currency, player segments, device information,
         app-instance ID, and — for signed-in players who consent — your Play Games Player ID.
-        Governed by <em>Share anonymous diagnostics</em>: off until you agree in the EEA, UK
+        Governed by <em>Share gameplay stats</em>: off until you agree in the EEA, UK
         and Switzerland; on from first launch elsewhere, with an on-screen notice and a
         one-tap off switch</td>
       </tr>
@@ -121,8 +121,9 @@
     saved to the cloud using <strong>Google Play Saved Games</strong> so it can be restored
     after a reinstall or on a new device (see <em>Google Play Games Services</em> below).
     ⚠️ The cloud save holds your meta progression only — Heartseeds, Grove upgrades,
-    campaign results and stars, records and unlocked factions. A <em>run in progress</em> and
-    your app settings are <strong>device-local</strong> and are not synced: an unfinished
+    campaign results and stars, records and unlocked factions, plus your chosen Grove
+    palette. A <em>run in progress</em> and your other app settings (sound, accessibility,
+    your diagnostics choice) are <strong>device-local</strong> and are not synced: an unfinished
     run does not follow you to another device. If you do not sign in, your
     progress stays only on your device, and clearing the app's data or uninstalling the app
     will erase it (the non-consumable full-game purchase can still be restored through
@@ -154,8 +155,10 @@
   <p>
     Because the app carries no advertising, there is exactly one privacy choice to make, and
     the app asks you directly rather than through an advertising consent form. Every player
-    is shown a card about it on one of their first launches, telling them what is collected
-    and how to stop it. Your answer controls the
+    who can be asked is shown a card about it on one of their first launches, telling them
+    what is collected and how to stop it (the exception is a player Google Play identifies
+    as a minor, or whose age still has to be verified: they are not asked, and nothing is
+    collected — see the end of this section). Your answer controls the
     <em>Firebase Analytics</em> section below in full. It controls one part of the
     <em>Firebase Crashlytics</em> section — whether your Play Games Player ID is attached to
     crash reports — but it does not switch crash reporting itself on or off.
@@ -165,11 +168,11 @@
   </p>
   <ul>
     <li><strong>In the European Economic Area, the United Kingdom and Switzerland</strong>,
-    it is a request, and nothing is collected until you agree. Analytics storage stays
-    switched off from the moment the app starts — before the card appears, while it is on
+    it is a request, and nothing is collected until you agree. Analytics collection is
+    switched off every time the app starts — before the card appears, while it is on
     screen, and permanently if you decline.</li>
-    <li><strong>Everywhere else</strong>, anonymous gameplay statistics are collected from
-    first launch, and the card tells you so and offers a single tap to stop it. Your Play
+    <li><strong>Everywhere else</strong>, gameplay statistics are collected from first
+    launch, and the card tells you so and offers a single tap to stop it. Your Play
     Games Player ID is not attached to anything until you have answered that card. You are
     never opted in silently: the card appears whether or not you go looking for it, and the
     Settings switch below turns it off at any time, in any country.</li>
@@ -178,16 +181,16 @@
     In both cases the same rules apply once you have answered:
   </p>
   <ul>
-    <li><strong>If you decline</strong>, analytics storage is
-    switched off: Firebase Analytics does not read or store analytics identifiers on your
-    device, and no Play Games Player ID is attached to analytics or crash reports. A refusal
-    is remembered and you are not asked again.</li>
+    <li><strong>If you decline</strong>, analytics collection is
+    switched off: the app sends no gameplay events, Firebase Analytics does not read or
+    store analytics identifiers on your device, and no Play Games Player ID is attached to
+    analytics or crash reports. A refusal is remembered and you are not asked again.</li>
     <li><strong>If you agree</strong>, gameplay events are collected as described below,
     and — if you are signed in to Google Play Games — your Player ID is attached to them and
     to crash reports.</li>
     <li><strong>Crash reports are collected either way.</strong> Crash and error diagnostics
     are sent whether or not you agree, because a crash report is how a broken build gets
-    fixed. Declining keeps them anonymous rather than switching them off; see
+    fixed. Declining keeps your Player ID off them rather than switching them off; see
     <em>Firebase Crashlytics</em> below for exactly what one contains.</li>
     <li><strong>The three advertising-related consent categories</strong> that Google's
     consent framework defines (ad storage, ad user data, ad personalisation) are set to
@@ -196,12 +199,14 @@
   </ul>
   <p>
     <strong>You can change your answer at any time</strong>, in any country, under
-    <em>Settings &gt; Share anonymous diagnostics</em>. Turning it off takes effect
-    immediately and clears your Play Games Player ID from both Firebase Analytics and
+    <em>Settings &gt; Share gameplay stats</em>. Turning it off takes effect
+    immediately, switches analytics collection off, and clears your Play Games Player ID
+    from both Firebase Analytics and
     Firebase Crashlytics; see <em>Data Deletion</em> for what that does and does not remove.
-    Where Google Play indicates that a player is a minor, the app does not ask this question
-    and does not enable analytics identification at all; the Settings switch is not shown to
-    them either (see <em>Age Signals</em> below).
+    Where Google Play indicates that a player is a minor, or that the player's age must be
+    verified and has not been, the app does not ask this question and keeps analytics
+    collection and identification switched off; the Settings switch is not shown to them
+    either (see <em>Age Signals</em> below).
   </p>
 
   <h2>Google Play Billing &amp; In-App Purchases</h2>
@@ -255,7 +260,7 @@
     functionality purposes:
   </p>
   <ul>
-    <li><strong>User ID (Player ID)</strong> — a unique identifier linking your Google account to your in-game profile. If you have also turned on <em>Share anonymous diagnostics</em>, this identifier is additionally used as the user identifier in Firebase Analytics and Firebase Crashlytics (see those sections for the conditions and how to withdraw).</li>
+    <li><strong>User ID (Player ID)</strong> — a unique identifier linking your Google account to your in-game profile. If you have also turned on <em>Share gameplay stats</em>, this identifier is additionally used as the user identifier in Firebase Analytics and Firebase Crashlytics (see those sections for the conditions and how to withdraw).</li>
     <li><strong>Saved game data (app activity)</strong> — your stored game progress, synced through Google Play Saved Games so it can be restored on reinstall or a new device.</li>
     <li><strong>Achievements and leaderboard scores</strong> — achievements you unlock and scores you submit are associated with your Play Games profile; leaderboard scores may be visible to other players depending on your Google Play Games privacy settings.</li>
   </ul>
@@ -285,6 +290,16 @@
     <a href="https://support.google.com/googleplaygames" target="_blank" rel="noopener">support.google.com/googleplaygames</a>.
   </p>
 
+  <h2>Our Other Games</h2>
+  <p>
+    The <em>More games</em> list in Settings shows other games by Tinker Apps. It is part of
+    the app: no advertising SDK is involved and nothing is downloaded to show it. If you tap
+    one, Google Play opens that game's store page with a short tag naming Rootfast as where
+    you came from, so Google Play can report how many installs our own promotion produced.
+    The tag contains no personal information. The tap is recorded in Firebase Analytics
+    (see below), and like every other event only while <em>Share gameplay stats</em> is on.
+  </p>
+
   <h2>Firebase Analytics</h2>
   <p>
     Rootfast uses Google Firebase Analytics to understand how players interact
@@ -294,8 +309,11 @@
     <li>App events — for example: starting and ending a run, waves cleared and where a run
     was lost, campaign level results and stars, tutorial progress, cards chosen or skipped
     during a draft, Grove upgrade unlocks, whether the purchase screen was shown and
-    whether it was dismissed, in-app setting changes, and errors saving your game to the
-    device</li>
+    whether it was dismissed, each step of a purchase (starting checkout, completing it, or
+    the reason one did not complete), in-app setting changes, errors saving your game to the
+    device, how cloud save went (loaded, merged, a conflict, or a change of account), whether
+    a rating prompt was requested, allowed by Google Play or held back, and when you tapped
+    one of our other games (see <em>Our Other Games</em>)</li>
     <li><strong>Purchase events, including the amount and currency</strong> of an in-app
     purchase you complete, so that revenue can be reported alongside gameplay. Tinker Apps
     never receives, sees, or stores your payment details — see <em>Google Play Billing</em>
@@ -321,7 +339,7 @@
     <strong>exact counts</strong> — your total stars and the number of Grove upgrades you
     own — because the ranges were too wide to be useful for balancing the game's difficulty.
     All of them describe your activity in this game only, none of them is used to target
-    advertising, and they are recorded only while <em>Share anonymous diagnostics</em> is
+    advertising, and they are recorded only while <em>Share gameplay stats</em> is
     on — which, as described above, is from first launch outside the EEA, the UK and
     Switzerland, and only after you agree inside them.
   </p>
@@ -338,10 +356,10 @@
     scoped to this game. It is not your name, email address, Google account address, or
     Play Games display name, and none of those are ever sent to Firebase.</li>
     <li>It is only used <strong>after you turn on</strong>
-    <em>Share anonymous diagnostics</em>. Until you answer that question — and if you
+    <em>Share gameplay stats</em>. Until you answer that question — and if you
     decline — no Player ID is attached to analytics events or crash reports.</li>
-    <li>If you <strong>turn it off</strong> (<em>Settings &gt; Share anonymous
-    diagnostics</em>), the identifier is cleared from both services immediately and stops
+    <li>If you <strong>turn it off</strong> (<em>Settings &gt; Share gameplay
+    stats</em>), the identifier is cleared from both services immediately and stops
     being attached to anything new.</li>
     <li>Where Google Play indicates that a user is a <strong>minor</strong> (see
     <em>Age Signals</em> below), no Player ID is attached, regardless of consent.</li>
@@ -359,10 +377,10 @@
     Google account behind it — but Tinker Apps sees only the identifier itself, and uses it
     to group a player's own activity together, not to build advertising profiles. In the EEA,
     UK, and Switzerland, Firebase Analytics does
-    not store or use device identifiers until you agree on the app's own diagnostics card
-    (described above) or turn on <em>Share anonymous diagnostics</em> in Settings; if
-    consent is not given, analytics identifiers remain disabled (Analytics may still record
-    limited, non-identifying information needed for basic operation). You may also be able
+    not collect anything until you agree on the app's own diagnostics card
+    (described above) or turn on <em>Share gameplay stats</em> in Settings; if
+    consent is not given, analytics collection stays switched off entirely, so no events
+    and no identifiers are sent. You may also be able
     to limit certain data collection through your device or Google privacy settings.
   </p>
 
@@ -410,9 +428,11 @@
   </p>
   <p>
     Rootfast uses this information only to provide an age-appropriate experience —
-    specifically, where Google Play indicates a player is a minor, the app does not ask the
-    diagnostics question at all and withholds the Play Games Player ID from analytics and
-    crash reports — and for legal compliance and safety, as permitted by these laws. The
+    specifically, where Google Play indicates a player is a minor, or that the player's age
+    must be verified and has not been yet, the app does not ask the diagnostics question at
+    all, keeps analytics collection switched off, and withholds the Play Games Player ID
+    from analytics and crash reports — and for legal compliance and safety, as permitted by
+    these laws. The
     app carries no advertising, so this signal no longer affects any ad treatment; earlier
     versions used it to restrict ad personalisation and to offer minors an ad-free break in
     place of an interstitial, and both of those went with the ads. In-app purchases are not restricted by the app based on this signal; purchases by
@@ -479,7 +499,7 @@
     You have several controls over the data processed through the app:
   </p>
   <ul>
-    <li><strong>Turn analytics and diagnostics off (or on)</strong> — open <em>Settings &gt; Share anonymous diagnostics</em> in the app, at any time and in any region. Turning it off takes effect immediately and clears your Play Games Player ID from Firebase Analytics and Crashlytics, so it stops being attached to new events and crash reports.</li>
+    <li><strong>Turn analytics and diagnostics off (or on)</strong> — open <em>Settings &gt; Share gameplay stats</em> in the app, at any time and in any region. Turning it off takes effect immediately and clears your Play Games Player ID from Firebase Analytics and Crashlytics, so it stops being attached to new events and crash reports.</li>
     <li><strong>Avoid the Player ID entirely</strong> — do not sign in to Google Play Games. The game is fully playable signed out; you lose cloud saves, achievements, and leaderboards, and no Player ID exists to attach.</li>
     <li><strong>Delete cloud saved games</strong> — via your Google Play Games profile or Google Account settings under <em>Settings &gt; Delete Play Games account and data</em>.</li>
     <li><strong>Manage data held by Google</strong> — at <a href="https://myaccount.google.com" target="_blank" rel="noopener">myaccount.google.com</a>.</li>
@@ -545,9 +565,9 @@
     accounts or personal profiles. <strong>Rootfast does no advertising at all</strong> — no
     advertising identifier is read or shared — so there is no cross-context behavioural
     advertising &ldquo;sharing&rdquo; under the CPRA arising from this app. Outside the EEA,
-    the UK and Switzerland, anonymous gameplay statistics are collected from first launch
+    the UK and Switzerland, gameplay statistics are collected from first launch
     and the app tells you so on screen; you can turn them off with one tap on that notice,
-    or at any time under <em>Settings &gt; Share anonymous diagnostics</em>. California residents may contact us
+    or at any time under <em>Settings &gt; Share gameplay stats</em>. California residents may contact us
     using the information in the Contact section to exercise their rights, and we will not
     discriminate against you for doing so.
   </p>
@@ -558,11 +578,11 @@
     13 and is not intended to be used as a child-directed service under applicable
     privacy laws. Where Google Play provides an age signal indicating that a user is a minor
     (see <em>Age Signals</em> above), the app does not ask the diagnostics question, analytics
-    identification stays switched off, and no Play Games Player ID is attached to anything.
+    collection stays switched off, and no Play Games Player ID is attached to anything.
   </p>
   <p>
     To be precise rather than absolute about what remains: with diagnostics off, Firebase
-    Analytics does not store analytics identifiers, but the app still collects
+    Analytics collects nothing, but the app still collects
     <strong>crash and stability diagnostics</strong> through Firebase Crashlytics, which
     necessarily includes device and installation identifiers so a crash can be attributed to
     a build and a device model. That is how a broken release gets found and fixed, it
@@ -599,14 +619,14 @@
     voluntary feedback. Crash data is not used by Tinker Apps to directly identify users
     by name, email, or similar directly identifying information.</li>
     <li><strong>Firebase Analytics</strong> — in the EEA, UK, and Switzerland, analytics that
-    rely on device identifiers run only after you turn on <em>Share anonymous
-    diagnostics</em>; until you answer, and if you decline, analytics storage stays disabled.
+    rely on device identifiers run only after you turn on <em>Share gameplay
+    stats</em>; until you answer, and if you decline, analytics collection stays switched off.
     The app asks this question in every region rather than only where a form is legally
     required, so the same choice is available to everyone.</li>
     <li><strong>Consent — Play Games Player ID as a user identifier</strong> — attaching your
     Player ID to Firebase Analytics and Crashlytics relies on the same explicit choice. It is
     never attached before you turn diagnostics on, is cleared the moment you turn them off
-    under <em>Settings &gt; Share anonymous diagnostics</em>, and is never attached where
+    under <em>Settings &gt; Share gameplay stats</em>, and is never attached where
     Google Play indicates the user is a minor. Crash reporting continues to function without
     it.</li>
     <li><strong>Performance of a contract</strong> — Google Play Games Services is used to
